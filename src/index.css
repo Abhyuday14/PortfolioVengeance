@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* The absolute void */
+  --color-navy-black: #000000; 
+  /* Darkened to maintain subtle contrast against the black */
+  --color-dark-panel: #0A0A0A; 
+  --color-rain-grey: #1E2A3A;
+  --color-blood-red: #D90000; 
+  --color-light-text: #CDD9F5;
+  --color-mid-text: #889280;
+  --color-bat-yellow: #F5C300;
+  
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-navy-black);
+  color: var(--color-light-text);
+  font-family: var(--font-inter);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* CSS Noise SVG Filter - The Film Grain */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03; 
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+
+@layer utilities {
+  /* 1. Slowly blips the entire box background/border */
+  @keyframes pulse-eerie {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.2; }
+  }
+
+  /* 2. Makes the tracked letters flicker rapidly/randomly like an old CRT */
+  @keyframes flicker {
+    0%   { opacity: 0.1; }
+    5%   { opacity: 0.7; }
+    10%  { opacity: 0.1; }
+    15%  { opacity: 0.9; }
+    20%  { opacity: 0.1; }
+    25%  { opacity: 1.0; }
+    30%  { opacity: 0.8; }
+    35%  { opacity: 0.2; }
+    40%  { opacity: 1.0; }
+    45%  { opacity: 0.6; }
+    50%  { opacity: 0.1; }
+    100% { opacity: 1.0; }
+  }
+
+  .animate-pulse-eerie {
+    animation: pulse-eerie 4s ease-in-out infinite; /* Slow pulse */
+  }
+
+  .animate-flicker {
+    animation: flicker 1s steps(1) infinite; /* Fast, stepped flicker */
+  }
+}
