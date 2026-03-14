@@ -74,7 +74,7 @@ const Contact = () => {
           {/* Right Side: Brutalist Raw Text Form */}
           <div className="flex flex-col justify-center">
             <p className="text-mid-text text-xs uppercase tracking-widest mb-4 font-mono">Secure_Payload_Form</p>
-            <form action="https://formspree.io/f/your-form-id" method="POST" className="flex flex-col gap-4">
+            <form action="https://formspree.io/f/xbdzkkqp" method="POST" className="flex flex-col gap-4">
               <input 
                 type="email" 
                 name="email" 
