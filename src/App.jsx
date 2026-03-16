@@ -52,7 +52,7 @@ function App() {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
               className="text-xl md:text-2xl text-mid-text mt-4 font-normal max-w-2xl pointer-events-auto"
             >
-              Systems Programming, Cloud Computing, & Natural Language Processing Research.
+              Dark Mode Engineer: Systems, Cloud, AI & Technical Leadership
             </motion.p>
             
             <motion.div 

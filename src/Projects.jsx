@@ -8,7 +8,7 @@ const Projects = () => {
       desc: "A full-stack blogging platform and portfolio built with TypeScript and React. Features a secure administrative backend using Supabase for seamless CRUD operations.",
       tech: ["TypeScript", "React", "Supabase"],
       repo: "https://github.com/Abhyuday14/JournalistShalu",
-      link: "https://journalist-shalu.vercel.app/" // Replace with live link if different
+      link: "https://journalist-shalu.vercel.app/" 
     },
     {
       title: "Portfolio_Vengeance",
