@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import abhyudayPic from './assets/Abhyuday.jpeg';
 
 const About = () => {
   return (
@@ -17,7 +18,7 @@ const About = () => {
           <div className="relative overflow-hidden bg-dark-panel aspect-[3/4] border border-rain-grey">
             {/* Replace this src with your actual photo path later */}
             <img 
-              src="public\Abhyuday.jpeg" 
+              src={abhyudayPic} 
               alt="Abhyuday Sachdeva" 
               className="w-full h-full object-cover filter grayscale contrast-125 brightness-75 transition-all duration-700 group-hover:brightness-100"
             />
