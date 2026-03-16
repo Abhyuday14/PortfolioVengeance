@@ -22,7 +22,7 @@ const Projects = () => {
       desc: "A high-performance inference system designed for text-based analysis, focusing on AI hallucination detection and mitigation in Large Language Models.",
       tech: ["Python", "PyTorch", "HuggingFace"],
       repo: "https://github.com/Abhyuday14/Reducing-Hallucination",
-      link: ""
+      link: "https://github.com/Abhyuday14/Reducing-Hallucination/blob/main/README.md"
     },
     {
       title: "F1 race Predictor",
@@ -67,7 +67,7 @@ const Projects = () => {
               <h3 className="text-xl font-bold text-white group-hover:text-blood-red transition-colors font-mono">
                 {project.title}
               </h3>
-              <div className="w-12 h-[1px] bg-blood-red mt-2 group-hover:w-full transition-all duration-500"></div>
+              <div className="w-12 h-px bg-blood-red mt-2 group-hover:w-full transition-all duration-500"></div>
             </div>
 
             <p className="text-mid-text text-sm mb-6 font-mono leading-relaxed opacity-80">
