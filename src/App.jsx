@@ -71,7 +71,7 @@ function App() {
               
               {/* Download link pointing to your actual resume file */}
               <a 
-                href="abhyuday-dev\public\Abhyudays_Resume.pdf"
+                href="/Abhyudays_Resume.pdf"
                 download="Abhyuday_Sachdeva_Resume.pdf" 
                 className="inline-block text-light-text px-8 py-3 text-[13px] font-mono tracking-widest uppercase hover:text-white cursor-pointer transition-colors duration-200 text-center"
               >
