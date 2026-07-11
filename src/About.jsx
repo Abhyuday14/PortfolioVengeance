@@ -51,7 +51,7 @@ const About = () => {
             {/* Education Card - Dark panel with blood red left border */}
             <div className="bg-dark-panel border-l-2 border-blood-red p-6 my-8">
               <h3 className="text-white font-semibold text-lg tracking-wide uppercase text-[15px]">Computer Science Engineering</h3>
-              <p className="text-mid-text text-sm mt-1">Vellore Institue of Technology • 2022 - 2026</p>
+              <p className="text-mid-text text-sm mt-1">Vellore Institute of Technology • 2022 - 2026</p>
             </div>
 
             {/* Career Interests Tags */}

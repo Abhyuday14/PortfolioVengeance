@@ -6,7 +6,7 @@ const Experience = () => {
     {
       company: "Tweaking Technologies",
       role: "Software Engineering Intern",
-      date: "PRESENT",
+      date: "May - July 2024",
       responsibilities: [
         "Developing and optimizing backend services for internal toolchains.",
         "Collaborating with the systems architecture team to refactor legacy codebases.",
