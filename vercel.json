@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/Abhyudays_Resume.pdf", "destination": "/Abhyuday_Sachdeva_Resume.pdf", "permanent": true },
+    { "source": "/resume", "destination": "/Abhyuday_Sachdeva_Resume.pdf", "permanent": false }
+  ]
+}

@@ -10,7 +10,9 @@ const EasterEggs = () => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (!/^[a-zA-Z0-9]$/.test(e.key)) return; 
+      if (!/^[a-zA-Z0-9]$/.test(e.key) || e.ctrlKey || e.metaKey || e.altKey) return;
+      // Typing in the contact form shouldn't trigger the protocol.
+      if (e.target.closest?.('input, textarea, select, [contenteditable="true"]')) return;
 
       // Clear the 15s reset timer every time a key is pressed
       if (resetTimer.current) clearTimeout(resetTimer.current);
@@ -51,7 +53,7 @@ const EasterEggs = () => {
   return (
     <>
       {/* THE FLICKERING TRACKING BOX */}
-      <div className="fixed top-4 right-4 z-[99999] bg-[#0A0A0A] border border-blood-red text-blood-red font-mono px-4 py-2 pointer-events-none animate-pulse-eerie">
+      <div aria-hidden="true" className="fixed bottom-4 right-4 z-[99999] bg-[#0A0A0A] border border-blood-red text-blood-red font-mono px-4 py-2 pointer-events-none animate-pulse-eerie">
         <span className="opacity-70">TRACKING!!</span>
         <span className="animate-flicker inline-block ml-2 uppercase text-white tracking-widest">
           {debugKeys}
@@ -73,6 +75,8 @@ const EasterEggs = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
+            role="status"
+            aria-label="Vengeance Protocol Initiated"
             className="fixed inset-0 z-[10000] flex items-center justify-center bg-black pointer-events-none"
           >
             {/* Phase 1: Blood Red Flash */}
@@ -99,7 +103,7 @@ const EasterEggs = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 4.8, duration: 1.5, ease: "easeOut" }}
               src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGRrZ2hwb2RuM3p1MnVoeWNqZDc5bGRleDV2ZDV3bnI3ZGJsMGtuNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ygizJv7z4cvcBnF47d/giphy.gif" 
-              alt="Vengeance"
+              alt=""
               className="w-full h-full object-cover z-10"
             />
           </motion.div>

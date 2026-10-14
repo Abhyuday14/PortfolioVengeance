@@ -7,6 +7,8 @@ const Rain = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     let animationFrameId;
+    let running = false;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Set canvas to full window size
     const setCanvasSize = () => {
@@ -61,13 +63,30 @@ const Rain = () => {
         }
       }
 
-      animationFrameId = requestAnimationFrame(draw);
+      if (running) animationFrameId = requestAnimationFrame(draw);
     };
 
-    draw();
+    // Reduced motion: one still frame of rain. Otherwise only animate while the hero is on screen.
+    if (reduceMotion) {
+      draw();
+      return () => window.removeEventListener('resize', setCanvasSize);
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !running) {
+        running = true;
+        draw();
+      } else if (!entry.isIntersecting) {
+        running = false;
+        cancelAnimationFrame(animationFrameId);
+      }
+    });
+    observer.observe(canvas);
 
     return () => {
+      observer.disconnect();
       window.removeEventListener('resize', setCanvasSize);
+      running = false;
       cancelAnimationFrame(animationFrameId);
     };
   }, []);

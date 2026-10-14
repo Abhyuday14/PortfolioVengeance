@@ -5,39 +5,39 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Languages",
-      skills: ["C / C++", "Python", "TypeScript", "JavaScript", "SQL", "Assembly"]
+      skills: ["Python", "SQL", "R", "C++", "JavaScript", "TypeScript"]
     },
     {
-      title: "Tools",
-      skills: ["React", "Node.js", "AWS", "Git", "LaTeX", "Docker"]
+      title: "Machine Learning",
+      skills: ["scikit-learn", "XGBoost", "Gradient Boosting", "NLP", "LLMs", "RAG", "LangChain", "OpenCV"]
     },
     {
-      title: "Data Tools",
-      skills: ["PyTorch", "Pandas", "Scikit-Learn", "Transformers", "NumPy"]
+      title: "Data",
+      skills: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "yfinance", "Tableau", "Excel", "MySQL", "MongoDB"]
     },
     {
-      title: "Databases",
-      skills: ["Supabase", "PostgreSQL", "MongoDB", "Redis"]
+      title: "Engineering",
+      skills: ["Git", "Linux", "Jupyter", "Streamlit", "pytest", "API Integration"]
     },
     {
-      title: "Management",
-      skills: ["Cross-functional Leadership", "Strategic Planning", "Agile Workflows", "Financing", "Product Management"]
+      title: "Ways of Working",
+      skills: ["Agile (Scrum)", "Project Management", "Digital Strategy"]
     }
   ];
 
   return (
-    <section id="skills" className="min-h-screen py-32 relative z-10 pointer-events-auto flex flex-col justify-center">
+    <section id="skills" className="py-24 md:py-32 relative z-10 pointer-events-auto scroll-mt-16">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
+        <p className="font-mono text-[12px] tracking-[0.3em] uppercase text-blood-red mb-4">05 · Arsenal</p>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-16 tracking-tight">
           The Arsenal.
         </h2>
 
-        {/* Updated to a 5-Column Grid on large screens to fit the new category */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {skillCategories.map((category, index) => (
             <div key={index}>
@@ -51,7 +51,7 @@ const Skills = () => {
                 {category.skills.map((skill, idx) => (
                   <span 
                     key={idx} 
-                    className="bg-transparent border border-rain-grey text-light-text px-4 py-2 text-[13px] hover:border-blood-red hover:text-white transition-colors duration-200"
+                    className="bg-transparent border border-rain-grey text-light-text px-4 py-2 text-[13px]"
                   >
                     {skill}
                   </span>

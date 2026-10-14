@@ -74,3 +74,38 @@ body {
     animation: flicker 1s steps(1) infinite; /* Fast, stepped flicker */
   }
 }
+:focus-visible {
+  outline: 2px solid var(--color-blood-red);
+  outline-offset: 3px;
+}
+
+::selection {
+  background-color: var(--color-blood-red);
+  color: #ffffff;
+}
+
+/* Scroll cue in the hero: a red line that keeps falling, like the rain. */
+@keyframes drip {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.animate-drip {
+  animation: drip 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Chart hatching for "abstained" segments */
+.hatch {
+  background-image: repeating-linear-gradient(45deg, rgba(205, 217, 245, 0.18) 0 1px, transparent 1px 5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
