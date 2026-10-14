@@ -91,19 +91,6 @@ function App() {
             </motion.div>
           </div>
 
-          {/* Scroll cue */}
-          <motion.a
-            href="#about"
-            aria-hidden="true"
-            tabIndex={-1}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 text-mid-text hover:text-white transition-colors"
-          >
-            <span className="font-mono text-[10px] tracking-[0.4em] uppercase">Scroll</span>
-            <span className="block w-px h-14 bg-blood-red animate-drip"></span>
-          </motion.a>
         </section>
 
         <About />

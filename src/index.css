@@ -84,16 +84,72 @@ body {
   color: #ffffff;
 }
 
-/* Scroll cue in the hero: a red line that keeps falling, like the rain. */
-@keyframes drip {
-  0% { transform: scaleY(0); transform-origin: top; }
-  45% { transform: scaleY(1); transform-origin: top; }
-  55% { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+/* Project buttons: cut corners, a hairline red frame, and a red fill that wipes in on hover. */
+.btn-gotham {
+  --cut: 12px;
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 26px 0 20px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-light-text);
+  background: var(--color-blood-red);
+  clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut)));
+  transition: color 0.3s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-.animate-drip {
-  animation: drip 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+.btn-gotham::before,
+.btn-gotham::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  clip-path: inherit;
+}
+
+.btn-gotham::before {
+  background: #050505;
+}
+
+.btn-gotham::after {
+  background: var(--color-blood-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.btn-gotham:hover,
+.btn-gotham:focus-visible {
+  color: #000000;
+}
+
+.btn-gotham:hover::after,
+.btn-gotham:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* The clip-path would cut off an outline, so the red fill doubles as the focus indicator. */
+.btn-gotham:focus-visible {
+  outline: none;
+}
+
+.btn-gotham-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-blood-red);
+  transition: background-color 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.btn-gotham:hover .btn-gotham-dot,
+.btn-gotham:focus-visible .btn-gotham-dot {
+  background: #000000;
 }
 
 /* Chart hatching for "abstained" segments */

@@ -21,7 +21,6 @@ const Projects = () => {
       title: "JournalistShalu",
       desc: "A blogging platform and portfolio built with TypeScript and React. A Supabase-backed admin area handles writing and editing posts.",
       tech: ["TypeScript", "React", "Supabase"],
-      repo: "https://github.com/Abhyuday14/JournalistShalu",
       link: "https://journalist-shalu.vercel.app/",
       linkLabel: "Visit site"
     },
@@ -69,25 +68,28 @@ const Projects = () => {
               ))}
             </div>
             
-            <div className="flex flex-wrap gap-6 mt-auto pt-8">
+            <div className="flex flex-wrap items-center gap-6 mt-auto pt-8">
               {project.link && (
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[12px] font-mono uppercase tracking-[0.25em] text-blood-red hover:text-white transition-colors py-2"
+                  className="btn-gotham"
                 >
-                  {project.linkLabel} ↗
+                  <span className="btn-gotham-dot" aria-hidden="true"></span>
+                  {project.linkLabel}
                 </a>
               )}
-              <a
-                href={project.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[12px] font-mono uppercase tracking-[0.25em] text-mid-text hover:text-white transition-colors py-2"
-              >
-                Source code ↗
-              </a>
+              {project.repo && (
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[12px] font-mono uppercase tracking-[0.25em] text-mid-text hover:text-white transition-colors py-2"
+                >
+                  Source code
+                </a>
+              )}
             </div>
           </motion.div>
         ))}
