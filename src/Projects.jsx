@@ -76,7 +76,6 @@ const Projects = () => {
                   rel="noopener noreferrer"
                   className="btn-gotham"
                 >
-                  <span className="btn-gotham-dot" aria-hidden="true"></span>
                   {project.linkLabel}
                 </a>
               )}

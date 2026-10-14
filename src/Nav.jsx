@@ -105,9 +105,9 @@ const Nav = () => {
               <a
                 href={RESUME}
                 download="Abhyuday_Sachdeva_Resume.pdf"
-                className="font-mono text-[12px] tracking-widest uppercase border border-blood-red text-blood-red px-4 py-2 hover:bg-blood-red hover:text-black transition-colors"
+                className="btn-gotham"
               >
-                Resume ↓
+                Resume
               </a>
             </li>
           </ul>
@@ -157,7 +157,7 @@ const Nav = () => {
               <a
                 href={RESUME}
                 download="Abhyuday_Sachdeva_Resume.pdf"
-                className="flex justify-center font-mono text-[13px] tracking-widest uppercase border border-blood-red text-blood-red px-8 py-4"
+                className="btn-gotham w-full justify-center min-h-14"
               >
                 Download Resume
               </a>

@@ -91,9 +91,9 @@ body {
   isolation: isolate;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
   min-height: 44px;
-  padding: 0 26px 0 20px;
+  padding: 0 calc(24px - 0.3em) 0 24px;
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 700;
@@ -111,7 +111,9 @@ body {
   position: absolute;
   inset: 1px;
   z-index: -1;
-  clip-path: inherit;
+  /* Slightly smaller cut than the frame, so the diagonal edges stay as thin as the straight ones. */
+  --inner: calc(var(--cut) - 0.4px);
+  clip-path: polygon(0 0, calc(100% - var(--inner)) 0, 100% var(--inner), 100% 100%, var(--inner) 100%, 0 calc(100% - var(--inner)));
 }
 
 .btn-gotham::before {
@@ -140,17 +142,6 @@ body {
   outline: none;
 }
 
-.btn-gotham-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--color-blood-red);
-  transition: background-color 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-.btn-gotham:hover .btn-gotham-dot,
-.btn-gotham:focus-visible .btn-gotham-dot {
-  background: #000000;
-}
 
 /* Chart hatching for "abstained" segments */
 .hatch {
